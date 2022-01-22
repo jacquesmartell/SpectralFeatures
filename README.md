@@ -18,3 +18,4 @@ Spectral features extraction for audio analysis.
   - Spectral peak
   - Spectral crest
   - Spectral flatness
+  - Zero-crossing rate

@@ -65,3 +65,7 @@ fprintf('Crest: %f\n', crest)
 % Spectral flatness
 flatness = exp(mean(log(Xk))) ./ mean(Xk);
 fprintf('Flatness: %f\n', flatness)
+
+% Zero-crossing rate
+zcr = mean(abs(diff(sign(xn))));
+fprintf('Zero-crossing rate :%f\n', zcr)
