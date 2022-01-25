@@ -1,5 +1,5 @@
 %% Spectral crest
-function [crest] = Crest(audio)
+function [crest] = spectralCrest(audio)
 % Spectrum
 [xn, fs] = audioread(audio);
 N = length(xn);

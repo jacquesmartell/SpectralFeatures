@@ -1,5 +1,5 @@
 %% Spectral rolloff
-function [rolloff] = Rolloff(audio, treshold)
+function [rolloff] = spectralRolloff(audio, treshold)
 % Spectrum
 [xn, fs] = audioread(audio);
 N = length(xn);

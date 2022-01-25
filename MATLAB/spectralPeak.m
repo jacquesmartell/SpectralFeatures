@@ -1,5 +1,5 @@
 %% Spectral peak
-function [peak] = Peak(audio)
+function [peak] = spectralPeak(audio)
 % Spectrum
 [xn, fs] = audioread(audio);
 N = length(xn);

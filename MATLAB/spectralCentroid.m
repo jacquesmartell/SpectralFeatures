@@ -1,5 +1,5 @@
 %% Spectral centroid
-function [centroid] = Centroid(audio)
+function [centroid] = spectralCentroid(audio)
 % Spectrum
 [xn, fs] = audioread(audio);
 N = length(xn);

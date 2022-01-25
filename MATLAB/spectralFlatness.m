@@ -1,5 +1,5 @@
 %% Spectral flatness
-function [flatness] = Flatness(audio)
+function [flatness] = spectralFlatness(audio)
 % Spectrum
 [xn, ~] = audioread(audio);
 Xk = abs(fft(xn));

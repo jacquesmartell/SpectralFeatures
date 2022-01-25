@@ -1,5 +1,5 @@
-%% Spectral kurtosis
-function [kurtosis] = Kurtosis(audio)
+%% Spectral spread
+function [spread] = spectralSpread(audio)
 % Spectrum
 [xn, fs] = audioread(audio);
 N = length(xn);
@@ -13,6 +13,3 @@ centroid = sum(Xk .* k) ./ sum(Xk);
 
 % Spectral spread
 spread = sqrt(sum((k - centroid).^2 .* Xk) ./ sum(Xk));
-
-% Spectral kurtosis
-kurtosis = sum((k - centroid).^4 .* Xk) ./ (spread^4 .* sum(Xk)) - 3;

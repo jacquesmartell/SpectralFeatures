@@ -1,5 +1,5 @@
 %% Spectral slope
-function [slope] = Slope(audio)
+function [slope] = spectralSlope(audio)
 % Spectrum
 [xn, fs] = audioread(audio);
 N = length(xn);

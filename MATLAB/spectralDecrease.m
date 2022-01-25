@@ -1,5 +1,5 @@
 %% Spectral decrease
-function [decrease] = Decrease(audio)
+function [decrease] = spectralDecrease(audio)
 % Spectrum
 [xn, ~] = audioread(audio);
 Xk = abs(fft(xn));

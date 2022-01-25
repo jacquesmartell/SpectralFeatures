@@ -1,5 +1,5 @@
-%% Spectral skewness
-function [skewness] = Skewness(audio)
+%% Spectral kurtosis
+function [kurtosis] = spectralKurtosis(audio)
 % Spectrum
 [xn, fs] = audioread(audio);
 N = length(xn);
@@ -14,5 +14,5 @@ centroid = sum(Xk .* k) ./ sum(Xk);
 % Spectral spread
 spread = sqrt(sum((k - centroid).^2 .* Xk) ./ sum(Xk));
 
-% Spectral skewness
-skewness = sum((k - centroid).^3 .* Xk) ./ (spread^3 .* sum(Xk));
+% Spectral kurtosis
+kurtosis = sum((k - centroid).^4 .* Xk) ./ (spread^4 .* sum(Xk)) - 3;
