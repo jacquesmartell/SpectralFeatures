@@ -1,6 +1,8 @@
 # Spectral Features
 Statistical and spectral features extraction for audio analysis.
 
+<br>
+
 
 
 ### Statistical features
@@ -13,6 +15,8 @@ Obtained using the time domain.
 | Power              | Sum of the squared amplitude over one period of the signal.  |
 | Root-mean-square   | Sum of the absolute value of the amplitude over one period of the signal. |
 | Zero–crossing rate | Average rate of change of the signal’s sign.                 |
+
+<br>
 
 
 
