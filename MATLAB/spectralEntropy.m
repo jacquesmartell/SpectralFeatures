@@ -2,9 +2,10 @@
 function [entropy] = spectralEntropy(audio)
 % Spectrum
 [xn, ~] = audioread(audio);
-N = length(xn);
+xn = (xn(:, 1) + xn(:, 2)) / size(xn, 2);
 Xk = abs(fft(xn));
-Xk = Xk(1 : end/2);
+Xk = Xk(1 : round(end/2));
+N = length(Xk);
 
 % Spectral entropy
 X = Xk ./ sum(Xk);

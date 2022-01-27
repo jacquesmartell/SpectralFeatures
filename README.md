@@ -17,5 +17,6 @@ Spectral features extraction for audio analysis.
 - Signal properties
   - Spectral peak
   - Spectral crest
+  - Spectral entropy
   - Spectral flatness
   - Zero-crossing rate

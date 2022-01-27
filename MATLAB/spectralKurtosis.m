@@ -2,10 +2,11 @@
 function [kurtosis] = spectralKurtosis(audio)
 % Spectrum
 [xn, fs] = audioread(audio);
-N = length(xn);
+xn = (xn(:, 1) + xn(:, 2)) / size(xn, 2);
 Xk = abs(fft(xn));
-Xk = Xk(1 : end/2);
-k = linspace(0, fs/2, N/2);
+Xk = Xk(1 : round(end/2));
+N = length(Xk);
+k = linspace(0, fs/2, N);
 k = k';
 
 % Spectral centroid
