@@ -26,7 +26,7 @@ Obtained using the frequency domain.
 
 | Feature           | Description                                                  | Formula                                                      |
 | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Spectral centroid | Energetic center of the signal.                              | <img src="https://render.githubusercontent.com/render/math?math=\color{grey}\displaystyle{\frac{\sum_{0}^N\|X_k\|\cdot k}{\sum_{0}^N\|X_k\|}}"> |
+| Spectral centroid | Energetic center of the signal.                              | <img src="https://render.githubusercontent.com/render/math?math=\color{grey}\dfrac{\displaystyle{\sum_{k=0}^N}\|X_k\|\cdot k}{\displaystyle{\sum_{k=0}^N}\|X_k\|}"> |
 | Spectral spread   | Deviation of the energy of the signal with respect to the centroid. |                                                              |
 | Spectral skewness | Lateral localization of the energy of the signal.            |                                                              |
 | Spectral kurtosis | Weigthed presence of the outliers in the signal’s tails.     |                                                              |
