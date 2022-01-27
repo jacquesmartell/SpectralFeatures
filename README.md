@@ -26,10 +26,10 @@ Obtained using the frequency domain.
 
 | Feature           | Description                                                  | Formula                                                      |
 | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Spectral centroid | Energetic center of the signal.                              | <img src="https://render.githubusercontent.com/render/math?math=\color{grey}\dfrac{\displaystyle{\sum_{k=0}^N}\|X_k\|\cdot k}{\displaystyle{\sum_{k=0}^N}\|X_k\|}"> |
-| Spectral spread   | Deviation of the energy of the signal with respect to the centroid. |                                                              |
-| Spectral skewness | Lateral localization of the energy of the signal.            |                                                              |
-| Spectral kurtosis | Weigthed presence of the outliers in the signal’s tails.     |                                                              |
+| Spectral centroid | Energetic center of the signal.                              | <img src="https://render.githubusercontent.com/render/math?math=\color{grey}\mu_1=\dfrac{\sum_{k=0}^N\|X_k\|\, k}{\sum_{k=0}^N\|X_k\|}"> |
+| Spectral spread   | Deviation of the energy of the signal with respect to the centroid. | <img src="https://render.githubusercontent.com/render/math?math=\color{grey}\mu_2=\sqrt{\dfrac{\sum_{k=0}^N(k-\mu_1)^2\,\|X_k\|}{\sum_{k=0}^N\|X_k\|}}"> |
+| Spectral skewness | Lateral localization of the energy of the signal.            | <img src="https://render.githubusercontent.com/render/math?math=\color{grey}\mu_3=\dfrac{\sum_{k=0}^N(k-\mu_1)^3\,\|X_k\|}{\mu_2^3\,\sum_{k=0}^N\|X_k\|}"> |
+| Spectral kurtosis | Weigthed presence of the outliers in the signal’s tails.     | <img src="https://render.githubusercontent.com/render/math?math=\color{grey}\mu_4=\dfrac{\sum_{k=0}^N(k-\mu_1)^4\,\|X_k\|}{\mu_2^4\,\sum_{k=0}^N\|X_k\|}-3"> |
 | Spectral rolloff  | Estimation of the cutoff frequency of the signal.            |                                                              |
 | Spectral decrease | Average drop of the signal’s energy.                         |                                                              |
 | Spectral slope    | Degree of the steepness of the signal.                       |                                                              |
