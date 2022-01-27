@@ -5,6 +5,8 @@ Statistical and spectral features extraction for audio analysis.
 
 ### Statistical features
 
+Obtained using the time domain.
+
 | Feature            | Description                                                  |
 | ------------------ | ------------------------------------------------------------ |
 | Energy             | Sum of the squared amplitude of the signal.                  |
@@ -15,6 +17,8 @@ Statistical and spectral features extraction for audio analysis.
 
 
 ### Spectral shape features
+
+Obtained using the frequency domain.
 
 | Feature           | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
