@@ -62,6 +62,11 @@ fprintf('Peak: %f\n', peak)
 crest = peak / mean(Xk);
 fprintf('Crest: %f\n', crest)
 
+% Spectral entropy
+X = Xk ./ sum(Xk);
+entropy = -sum(X .* log(X)) ./ log(N);
+fprintf('Entropy: %f\n', entropy)
+
 % Spectral flatness
 flatness = exp(mean(log(Xk))) ./ mean(Xk);
 fprintf('Flatness: %f\n', flatness)
