@@ -22,7 +22,7 @@ Obtained using the time domain.
 
 ### Spectral shape features
 
-Obtained using the frequency domain
+Obtained using the frequency domain.
 
 | Feature           | Description                                                  | Formula                                                      |
 | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
