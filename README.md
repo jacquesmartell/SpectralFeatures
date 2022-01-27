@@ -1,7 +1,7 @@
 # Spectral Features
-Spectral features extraction for audio analysis.
+Statistical and spectral features extraction for audio analysis.
 
-## Included descriptors:
+
 
 ### Statistical features
 
