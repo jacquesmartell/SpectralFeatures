@@ -9,6 +9,18 @@
 #include <vector>
 #include "math.h"
 
+enum Domain
+{
+    TIME = 1,
+    FREQUENCY = 2
+};
+
+enum Unit
+{
+    DB = 1,
+    LINEAR = 2
+};
+
 class SpectralFeatures
 {
 public:
@@ -16,7 +28,11 @@ public:
     SpectralFeatures();
     ~SpectralFeatures();
     
-    float getRMS(std::vector<float> inSamples, std::string inUnit);
+    std::vector<float> getVectorTime(std::vector<float> inSamples, float inSampleRate);
+    
+    float getRMS(std::vector<float> inSamples, int inUnit);
+    
+    float getCentroid(std::vector<float> inSamples, float inSampleRate, int inDomain);
     
 private:
     

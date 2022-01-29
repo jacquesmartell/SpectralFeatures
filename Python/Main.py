@@ -15,19 +15,19 @@ samples = [0.5, 0.3, 0.2, 0.6, -0.2, -0.7, 0.20, 0.47, -0.21, 0.99]
 
 ### RMS ###
 # SELECT "dB" or "linear"
-print("----------------")
-print("RMS:", rms.getRMS(samples, unit="linear"))
-print("RMS:", rms.getRMS(samples, unit="dB"))
+#print("----------------")
+#print("RMS:", rms.getRMS(track, unit="linear"))
+#print("RMS:", rms.getRMS(track, unit="dB"))
 
 ### Centroid ###
 # SELECT "Time" or "Frequency"
 print("----------------")
-print("Centroid in Time:", centroid.getCentroid(track, sr, inDomain="Time"))
-print("Centroid in Frequency:", centroid.getCentroid(track, sr, inDomain="Frequency"))
+print("Centroid in Time:", centroid.getCentroid(samples, 48000, inDomain="Time"))
+#print("Centroid in Frequency:", centroid.getCentroid(track, sr, inDomain="Frequency"))
 
 ### Peak ###
 # SELECT "Time" or "Frequency"
-print("----------------")
+'''print("----------------")
 print("Peak in Time:", peak.getPeak(track, sr, inDomain="Time"))
 print("Peak in Frequency:", peak.getPeak(track, sr, inDomain="Frequency"))
 
@@ -55,4 +55,4 @@ print("Entropy:", entropy.getEntropy(track))
 
 ### MFCC ###
 print("----------------")
-print("MFCC:", mfcc.getMFCC(track, sr, mfcc=13))
+print("MFCC:", mfcc.getMFCC(track, sr, mfcc=13))'''

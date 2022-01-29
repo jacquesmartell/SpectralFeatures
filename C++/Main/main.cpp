@@ -6,6 +6,7 @@ int main(int argc, const char * argv[])
 {
     // DATA
     float data[] = {0.5, 0.3, 0.2, 0.6, -0.2, -0.7, 0.20, 0.47, -0.21, 0.99};
+    float sampleRate = 48000;
     
     // STD VECTOR
     std::vector<float> samples;
@@ -17,8 +18,11 @@ int main(int argc, const char * argv[])
     SpectralFeatures spectralFeatures;
     
     // RMS
-    spectralFeatures.getRMS(samples, "dB");
-    spectralFeatures.getRMS(samples, "linear");
+    std::cout << "RMS in dB: " << spectralFeatures.getRMS(samples, Unit::DB) << std::endl;
+    std::cout << "RMS linear: " << spectralFeatures.getRMS(samples, Unit::LINEAR) << std::endl;
+    
+    // CENTROID
+    std::cout << "Centroid in time: " << spectralFeatures.getCentroid(samples, sampleRate, Domain::TIME) << std::endl;
     
     return 0;
 }
