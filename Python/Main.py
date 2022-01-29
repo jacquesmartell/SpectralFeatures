@@ -11,10 +11,13 @@ import Descriptors.MFCC as mfcc
 # LOAD TRACK
 track, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Kick_1.wav", inConfig="mono")
 
+samples = [0.5, 0.3, 0.2, 0.6, -0.2, -0.7, 0.20, 0.47, -0.21, 0.99]
+
 ### RMS ###
 # SELECT "dB" or "linear"
 print("----------------")
-print("RMS:", rms.getRMS(track, unit="linear"))
+print("RMS:", rms.getRMS(samples, unit="linear"))
+print("RMS:", rms.getRMS(samples, unit="dB"))
 
 ### Centroid ###
 # SELECT "Time" or "Frequency"
