@@ -1,6 +1,5 @@
 import soundfile as sf
 from soundfile import SoundFile
-import numpy as np
 
 # CHECAR MAYOR LONGITUD DE TODOS LOS AUDIOS
 def checkStems(inPaths):
