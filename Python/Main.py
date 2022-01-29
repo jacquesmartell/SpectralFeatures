@@ -1,6 +1,6 @@
 import Utilities.LoadAudio as load
 import Descriptors.Centroid as centroid
 
-samples, sr = load.loadAudio("Tracks/Pad.wav", "mono")
+track, sr = load.loadAudio("SpectralFeatures/Python/Tracks/kick.wav", inConfig="mono")
 
-centroid.getCentroid(samples, sr)
+print(centroid.getCentroid(track, sr))

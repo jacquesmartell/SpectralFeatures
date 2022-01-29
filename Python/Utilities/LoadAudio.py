@@ -5,63 +5,48 @@ import numpy as np
 # CHECAR MAYOR LONGITUD DE TODOS LOS AUDIOS
 def checkStems(inPaths):
     mayor = 0
-    for path in inPaths:
-        audio, sr = sf.read(path)
-        if len(audio) > mayor:
-            mayor = len(audio)
+    #for path in inPaths:
+    audio, sr = sf.read(inPaths)
+    if len(audio) > mayor:
+        mayor = len(audio)
+        
     return mayor
 
 
 # LOAD AUDIOS
-def loadAudio(inPaths, inConfig):
+def loadAudio(inPath, inConfig="mono"):
     print("---------")
     print("Añadiendo tracks...")
-    tracks = []
-    sampleRates = []
-    cont = 0
-    #lenMayor = checkStems(inPaths)
 
-    print(inPaths)
-    print(inConfig)
+    track = []
+    sampleRate = 0
 
-    '''for path in inPaths:
-        audio = SoundFile(path.text())
-
+    audio = SoundFile(inPath)
+    
+    if inConfig == "mono":
         if audio.channels == 1:
-            stereoSamples = []
-            samples = audio.read()
-
-            for i in range(lenMayor):
-                if i >= len(samples):
-                    stereoSample = [0.0, 0.0]
-                else:
-                    stereoSample = [samples[i], samples[i]]
-
-                stereoSamples.append(stereoSample)
-
-            stereoSound = np.append([[0.0, 0.0]], stereoSamples, axis=0)
-            stereoSound = np.delete(stereoSound, 0, 0)
-            tracks.append(stereoSound)
-            samp, sr = sf.read(path.text())
-            sampleRates.append(sr)
+            samples, sr = sf.read(inPath)
+            track = samples
+            sampleRate = sr
 
         else:
-            stereoSamples = []
-            samples = audio.read()
-            for i in range(lenMayor):
-                if i >= len(samples):
-                    stereoSample = [0.0, 0.0]
-                else:
-                    stereoSample = [samples[i][0], samples[i][1]]
+            samples, sr = sf.read(inPath)
+            track = samples[:,0]
+            sampleRate = sr
 
-                stereoSamples.append(stereoSample)
+    elif inConfig == "stereo":
+        if audio.channels == 1:
+            track = []
+            samples, sr = sf.read(inPath)
 
-            stereoSound = np.append([[0.0, 0.0]], stereoSamples, axis=0)
-            stereoSound = np.delete(stereoSound, 0, 0)
-            tracks.append(stereoSound)
-            samp, sr = sf.read(path.text())
-            sampleRates.append(sr)
+            for sample in samples:
+                track.append([sample, sample])
 
-        cont += 1'''
+            sampleRate = sr
 
-    return 0, 0
+        else:
+            samples, sr = sf.read(inPath)
+            track = samples
+            sampleRate = sr
+
+    return track, sampleRate
