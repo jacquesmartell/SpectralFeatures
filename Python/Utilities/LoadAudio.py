@@ -15,7 +15,7 @@ def checkStems(inPaths):
 # LOAD AUDIOS
 def loadAudio(inPath, inConfig="mono"):
     print("----------------")
-    print("Añadiendo tracks...")
+    print("Añadiendo track...")
 
     track = []
     sampleRate = 0

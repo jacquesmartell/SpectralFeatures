@@ -6,6 +6,7 @@ import Descriptors.Peak as peak
 import Descriptors.Kurtosis as kurtosis
 import Descriptors.RollOff as rolloff
 import Descriptors.Entropy as entropy
+import Descriptors.MFCC as mfcc
 
 track, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Kick_1.wav", inConfig="mono")
 
@@ -40,3 +41,6 @@ print("RollOff in Frequency:", rolloff.getRollOff(track, sr, inDomain="Frequency
 
 print("----------------")
 print("Entropy:", entropy.getEntropy(track))
+
+print("----------------")
+print("MFCC:", mfcc.getMFCC(track, sr, mfcc=13))
