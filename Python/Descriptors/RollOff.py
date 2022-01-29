@@ -2,8 +2,6 @@ import numpy as np
 import Utilities.Spectrum as amplitude
 import Utilities.Frequency as frequency
 import Utilities.VectorTime as time
-import Descriptors.Centroid as centroid
-import Descriptors.Spread as spread
 
 def getRollOff(inSamples, inSampleRate, inDomain="Frequency", threshold = 0.95):
         
