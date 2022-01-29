@@ -1,32 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "math.h"
-
-float getRMS(std::vector<float> inSamples, std::string inUnit)
-{
-    float sumCuadrados = 0.0f;
-    float rmsValue = 0.0f;
-    
-    for(int i=0; i < inSamples.size(); i++)
-    {
-        sumCuadrados += powf(inSamples[i], 2);
-    }
-    
-    // DECIBELS OR LINEAR
-    if (inUnit == "linear")
-        rmsValue = sqrt(sumCuadrados / inSamples.size());
-    else if (inUnit == "dB")
-    {
-        if(sqrt(sumCuadrados / inSamples.size()) != 0.0f)
-            rmsValue = 20.0f * log10(abs(sqrt(sumCuadrados / inSamples.size()))) / 1.0f;
-        else
-            rmsValue = -60.0f;
-    }
-    else
-        rmsValue = 0.0f;
-    
-    return rmsValue;
-}
+#include "SpectralFeatures.h"
 
 int main(int argc, const char * argv[])
 {
@@ -40,9 +14,11 @@ int main(int argc, const char * argv[])
         samples.push_back(data[i]);
     }
     
+    SpectralFeatures spectralFeatures;
+    
     // RMS
-    std::cout << "RMS en dB: " << getRMS(samples, "dB") << std::endl;
-    std::cout << "RMS lineal: " << getRMS(samples, "linear") << std::endl;
+    spectralFeatures.getRMS(samples, "dB");
+    spectralFeatures.getRMS(samples, "linear");
     
     return 0;
 }

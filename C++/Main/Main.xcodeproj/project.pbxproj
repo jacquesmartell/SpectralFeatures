@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7546038127A5E26A0096D63F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7546038027A5E26A0096D63F /* main.cpp */; };
+		7546038927A5EE6B0096D63F /* SpectralFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7546038827A5EE6B0096D63F /* SpectralFeatures.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		7546037D27A5E26A0096D63F /* Main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Main; sourceTree = BUILT_PRODUCTS_DIR; };
 		7546038027A5E26A0096D63F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7546038727A5EE150096D63F /* SpectralFeatures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpectralFeatures.h; sourceTree = "<group>"; };
+		7546038827A5EE6B0096D63F /* SpectralFeatures.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpectralFeatures.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				7546038027A5E26A0096D63F /* main.cpp */,
+				7546038827A5EE6B0096D63F /* SpectralFeatures.cpp */,
+				7546038727A5EE150096D63F /* SpectralFeatures.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7546038927A5EE6B0096D63F /* SpectralFeatures.cpp in Sources */,
 				7546038127A5E26A0096D63F /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
