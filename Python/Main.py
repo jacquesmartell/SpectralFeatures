@@ -7,52 +7,64 @@ import Descriptors.Kurtosis as kurtosis
 import Descriptors.RollOff as rolloff
 import Descriptors.Entropy as entropy
 import Descriptors.MFCC as mfcc
+import Descriptors.Energy as energy
+import Descriptors.Power as power
 
 # LOAD TRACK
-track, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Kick_1.wav", inConfig="mono")
+samples, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Kick_1.wav", inConfig="mono")
 
-samples = [0.5, 0.3, 0.2, 0.6, -0.2, -0.7, 0.20, 0.47, -0.21, 0.99]
+#samples = [0.5, 0.3, 0.2, 0.6, -0.2, -0.7, 0.20, 0.47, -0.21, 0.99]
+#sr = 48000
 
 ### RMS ###
 # SELECT "dB" or "linear"
-#print("----------------")
-#print("RMS:", rms.getRMS(track, unit="linear"))
-#print("RMS:", rms.getRMS(track, unit="dB"))
+print("----------------")
+print("RMS:", rms.getRMS(samples, unit="linear"))
+print("RMS:", rms.getRMS(samples, unit="dB"))
 
 ### Centroid ###
 # SELECT "Time" or "Frequency"
 print("----------------")
-print("Centroid in Time:", centroid.getCentroid(samples, 48000, inDomain="Time"))
-#print("Centroid in Frequency:", centroid.getCentroid(track, sr, inDomain="Frequency"))
+print("Centroid in Time:", centroid.getCentroid(samples, sr, inDomain="Time"))
+print("Centroid in Frequency:", centroid.getCentroid(samples, sr, inDomain="Frequency"))
 
 ### Peak ###
 # SELECT "Time" or "Frequency"
-'''print("----------------")
-print("Peak in Time:", peak.getPeak(track, sr, inDomain="Time"))
-print("Peak in Frequency:", peak.getPeak(track, sr, inDomain="Frequency"))
+print("----------------")
+print("Peak in Time:", peak.getPeak(samples, sr, inDomain="Time"))
+print("Peak in Frequency:", peak.getPeak(samples, sr, inDomain="Frequency"))
 
 ### Spread ###
 # SELECT "Time" or "Frequency"
 print("----------------")
-print("Spread in Time:", spread.getSpread(track, sr, inDomain="Time"))
-print("Spread in Frequency:", spread.getSpread(track, sr, inDomain="Frequency"))
+print("Spread in Time:", spread.getSpread(samples, sr, inDomain="Time"))
+print("Spread in Frequency:", spread.getSpread(samples, sr, inDomain="Frequency"))
 
 ### Kurtosis ###
 # SELECT "Time" or "Frequency"
 print("----------------")
-print("Kurtosis in Time:", kurtosis.getKurtosis(track, sr, inDomain="Time"))
-print("Kurtosis in Frequency:", kurtosis.getKurtosis(track, sr, inDomain="Frequency"))
+print("Kurtosis in Time:", kurtosis.getKurtosis(samples, sr, inDomain="Time"))
+print("Kurtosis in Frequency:", kurtosis.getKurtosis(samples, sr, inDomain="Frequency"))
 
 ### RollOff ###
 # SELECT "Time" or "Frequency"
 print("----------------")
-print("RollOff in Time:", rolloff.getRollOff(track, sr, inDomain="Time", threshold=0.95))
-print("RollOff in Frequency:", rolloff.getRollOff(track, sr, inDomain="Frequency", threshold=0.95))
+print("RollOff in Time:", rolloff.getRollOff(samples, sr, inDomain="Time"))
+print("RollOff in Frequency:", rolloff.getRollOff(samples, sr, inDomain="Frequency"))
 
 ### Entropy ###
 print("----------------")
-print("Entropy:", entropy.getEntropy(track))
+print("Entropy in Time:", entropy.getEntropy(samples, sr, inDomain="Time"))
+print("Entropy in Frequency:", entropy.getEntropy(samples, sr, inDomain="Frequency"))
 
 ### MFCC ###
 print("----------------")
-print("MFCC:", mfcc.getMFCC(track, sr, mfcc=13))'''
+print("MFCC:", mfcc.getMFCC(samples, sr, mfcc=13))
+
+### ENERGY ###
+print("----------------")
+print("Energy:", energy.getEnergy(samples, sr))
+
+### POWER ###
+print("----------------")
+print("Power:", power.getPower(samples, sr))
