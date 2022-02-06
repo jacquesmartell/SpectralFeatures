@@ -24,5 +24,8 @@ int main(int argc, const char * argv[])
     // CENTROID
     std::cout << "Centroid in time: " << spectralFeatures.getCentroid(samples, sampleRate, Domain::TIME) << std::endl;
     
+    // PEAK
+    std::cout << "Centroid in time: " << spectralFeatures.getPeak(samples, sampleRate, Domain::TIME) << std::endl;
+    
     return 0;
 }

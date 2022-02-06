@@ -17,10 +17,10 @@ import Descriptors.Flatness as flatness
 import Descriptors.Decrease as decrease
 
 # LOAD TRACK
-samples, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Kick_1.wav", inConfig="mono")
+#samples, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Kick_1.wav", inConfig="mono")
 
-#samples = [0.5, 0.3, 0.2, 0.6, -0.2, -0.7, 0.20, 0.47, -0.21, 0.99]
-#sr = 48000
+samples = [0.5, 0.3, 0.2, 0.6, -0.2, -0.7, 0.20, 0.47, -0.21, 0.99]
+sr = 48000
 
 ### RMS ###
 # SELECT "dB" or "linear"

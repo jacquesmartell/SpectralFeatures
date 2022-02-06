@@ -98,3 +98,46 @@ float SpectralFeatures::getCentroid(std::vector<float> inSamples, float inSample
     
     return centroidValue;
 }
+
+float SpectralFeatures::getPeak(std::vector<float> inSamples, float inSampleRate, int inDomain)
+{
+    float peakValue = 0.0f;
+        
+    switch(inDomain)
+    {
+        case TIME:
+        {
+            std::vector<float> timeVector = getVectorTime(inSamples, inSampleRate);
+            
+            int maxIndex = 0;
+            float maxValue = 0.0f;
+            for(int i = 0; i < inSamples.size(); i++)
+            {
+                if (inSamples[i] >= maxValue)
+                    maxIndex = i;
+            }
+            
+            peakValue = timeVector[maxIndex];
+            
+            break;
+        }
+
+        
+        case FREQUENCY:
+        {
+            
+            break;
+        }
+            
+        default:
+        {
+            peakValue = 0.0f;
+            break;
+        }
+            
+            
+            
+    }
+    
+    return peakValue;
+}

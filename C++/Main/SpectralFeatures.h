@@ -34,6 +34,8 @@ public:
     
     float getCentroid(std::vector<float> inSamples, float inSampleRate, int inDomain);
     
+    float getPeak(std::vector<float> inSamples, float inSampleRate, int inDomain);
+    
 private:
     
     
