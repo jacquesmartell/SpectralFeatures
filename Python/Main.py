@@ -29,31 +29,26 @@ print("RMS:", rms.getRMS(samples, unit="linear"))
 print("RMS:", rms.getRMS(samples, unit="dB"))
 
 ### Centroid ###
-# SELECT "Time" or "Frequency"
 print("----------------")
 print("Centroid in Time:", centroid.getCentroid(samples, sr, inDomain="Time"))
 print("Centroid in Frequency:", centroid.getCentroid(samples, sr, inDomain="Frequency"))
 
 ### Peak ###
-# SELECT "Time" or "Frequency"
 print("----------------")
 print("Peak in Time:", peak.getPeak(samples, sr, inDomain="Time"))
 print("Peak in Frequency:", peak.getPeak(samples, sr, inDomain="Frequency"))
 
 ### Spread ###
-# SELECT "Time" or "Frequency"
 print("----------------")
 print("Spread in Time:", spread.getSpread(samples, sr, inDomain="Time"))
 print("Spread in Frequency:", spread.getSpread(samples, sr, inDomain="Frequency"))
 
 ### Kurtosis ###
-# SELECT "Time" or "Frequency"
 print("----------------")
 print("Kurtosis in Time:", kurtosis.getKurtosis(samples, sr, inDomain="Time"))
 print("Kurtosis in Frequency:", kurtosis.getKurtosis(samples, sr, inDomain="Frequency"))
 
 ### RollOff ###
-# SELECT "Time" or "Frequency"
 print("----------------")
 print("RollOff in Time:", rolloff.getRollOff(samples, sr, inDomain="Time"))
 print("RollOff in Frequency:", rolloff.getRollOff(samples, sr, inDomain="Frequency"))
