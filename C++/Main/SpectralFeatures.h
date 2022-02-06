@@ -26,6 +26,7 @@ class SpectralFeatures
 public:
     
     SpectralFeatures();
+    
     ~SpectralFeatures();
     
     std::vector<float> getVectorTime(std::vector<float> inSamples, float inSampleRate);
@@ -36,8 +37,6 @@ public:
     
     float getPeak(std::vector<float> inSamples, float inSampleRate, int inDomain);
     
-private:
-    
-    
+    float getSpread(std::vector<float> inSamples, float inSampleRate, int inDomain);
     
 };

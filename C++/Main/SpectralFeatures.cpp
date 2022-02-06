@@ -134,10 +134,50 @@ float SpectralFeatures::getPeak(std::vector<float> inSamples, float inSampleRate
             peakValue = 0.0f;
             break;
         }
-            
-            
-            
     }
     
     return peakValue;
+}
+
+float SpectralFeatures::getSpread(std::vector<float> inSamples, float inSampleRate, int inDomain)
+{
+    float spreadValue = 0.0f;
+    
+    float centroid = getCentroid(inSamples, inSampleRate, inDomain);
+    
+    switch(inDomain)
+    {
+        case TIME:
+        {
+            std::vector<float> timeVector = getVectorTime(inSamples, inSampleRate);
+            
+            float sumaSpread = 0.0f;
+            float sumaSamples = 0.0f;
+            
+            for(int i = 0; i < inSamples.size(); i++)
+            {
+                sumaSpread += powf(timeVector[i] - centroid, 2.0f) * inSamples[i];
+                sumaSamples += inSamples[i];
+            }
+            
+            spreadValue = sqrtf(fabs(sumaSpread / sumaSamples));
+            
+            break;
+        }
+
+        
+        case FREQUENCY:
+        {
+            
+            break;
+        }
+            
+        default:
+        {
+            spreadValue = 0.0f;
+            break;
+        }
+    }
+    
+    return spreadValue;
 }
