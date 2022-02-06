@@ -9,9 +9,10 @@ import Descriptors.Entropy as entropy
 import Descriptors.MFCC as mfcc
 import Descriptors.Energy as energy
 import Descriptors.Power as power
+import Descriptors.ZeroCrossing as zerocrossing
 
 # LOAD TRACK
-samples, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Kick_1.wav", inConfig="mono")
+samples, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Guitar_1.wav", inConfig="mono")
 
 #samples = [0.5, 0.3, 0.2, 0.6, -0.2, -0.7, 0.20, 0.47, -0.21, 0.99]
 #sr = 48000
@@ -68,3 +69,7 @@ print("Energy:", energy.getEnergy(samples, sr))
 ### POWER ###
 print("----------------")
 print("Power:", power.getPower(samples, sr))
+
+### ZERO CROSSING ###
+print("----------------")
+print("Zero-Crossing:", zerocrossing.getZeroCrossing(samples, sr))
