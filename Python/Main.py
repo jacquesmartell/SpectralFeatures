@@ -10,6 +10,7 @@ import Descriptors.MFCC as mfcc
 import Descriptors.Energy as energy
 import Descriptors.Power as power
 import Descriptors.ZeroCrossing as zerocrossing
+import Descriptors.Skewness as skewness
 
 # LOAD TRACK
 samples, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Guitar_1.wav", inConfig="mono")
@@ -73,3 +74,8 @@ print("Power:", power.getPower(samples, sr))
 ### ZERO CROSSING ###
 print("----------------")
 print("Zero-Crossing:", zerocrossing.getZeroCrossing(samples, sr))
+
+### SKEWNESS ###
+print("----------------")
+print("Skewness in Time:", skewness.getSkewness(samples, sr, inDomain="Time"))
+print("Skewness in Frequency:", skewness.getSkewness(samples, sr, inDomain="Frequency"))
