@@ -14,6 +14,7 @@ import Descriptors.Skewness as skewness
 import Descriptors.Slope as slope
 import Descriptors.Crest as crest
 import Descriptors.Flatness as flatness
+import Descriptors.Decrease as decrease
 
 # LOAD TRACK
 samples, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Kick_1.wav", inConfig="mono")
@@ -96,3 +97,8 @@ print("Crest in Frequency:", crest.getCrest(samples, sr, inDomain="Frequency"))
 ### FLATNESS ###
 print("----------------")
 print("Flatness:", flatness.getFlatness(samples, sr))
+
+### DECREASE ###
+print("----------------")
+print("Decrease in Time:", decrease.getDecrease(samples, sr, inDomain="Time"))
+print("Decrease in Frequency:", decrease.getDecrease(samples, sr, inDomain="Frequency"))
