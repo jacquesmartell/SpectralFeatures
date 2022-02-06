@@ -11,6 +11,7 @@ import Descriptors.Energy as energy
 import Descriptors.Power as power
 import Descriptors.ZeroCrossing as zerocrossing
 import Descriptors.Skewness as skewness
+import Descriptors.Slope as slope
 
 # LOAD TRACK
 samples, sr = load.loadAudio("SpectralFeatures/Python/Tracks/Guitar_1.wav", inConfig="mono")
@@ -79,3 +80,8 @@ print("Zero-Crossing:", zerocrossing.getZeroCrossing(samples, sr))
 print("----------------")
 print("Skewness in Time:", skewness.getSkewness(samples, sr, inDomain="Time"))
 print("Skewness in Frequency:", skewness.getSkewness(samples, sr, inDomain="Frequency"))
+
+### SLOPE ###
+print("----------------")
+print("Slope in Time:", slope.getSlope(samples, sr, inDomain="Time"))
+print("Slope in Frequency:", slope.getSlope(samples, sr, inDomain="Frequency"))
